@@ -1,4 +1,4 @@
-defmodule Fsrs.Native.MemoryState do
+defmodule FsrsEx.Native.MemoryState do
   @typedoc """
 
   """

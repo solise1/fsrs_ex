@@ -1,5 +1,5 @@
-defmodule Fsrs.Native.ItemState do
-  alias Fsrs.Native.MemoryState
+defmodule FsrsEx.Native.ItemState do
+  alias FsrsEx.Native.MemoryState
 
   @type t :: %__MODULE__{
           interval: float(),

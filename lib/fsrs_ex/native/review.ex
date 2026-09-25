@@ -1,4 +1,4 @@
-defmodule Fsrs.Native.Review do
+defmodule FsrsEx.Native.Review do
   @type t :: %__MODULE__{
           rating: integer(),
           delta_t: integer()

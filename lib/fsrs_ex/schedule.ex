@@ -1,13 +1,13 @@
-defmodule Fsrs.Schedule do
+defmodule FsrsEx.Schedule do
   @moduledoc """
   Allows you to schedule new or existing cards.
 
   All functions can optionally receive FSRS parameters and/or a custom desired_retention.
   """
 
-  alias Fsrs.Native.MemoryState
-  alias Fsrs.Native.NextStates
-  alias Fsrs.Native
+  alias FsrsEx.Native.MemoryState
+  alias FsrsEx.Native.NextStates
+  alias FsrsEx.Native
 
   @type option :: {:parameters, [float()]} | {:desired_retention, float()}
   @type options :: [option()]

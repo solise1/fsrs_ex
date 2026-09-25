@@ -1,5 +1,5 @@
-defmodule Fsrs.Native.NextStates do
-  alias Fsrs.Native.ItemState
+defmodule FsrsEx.Native.NextStates do
+  alias FsrsEx.Native.ItemState
 
   @type t() :: %__MODULE__{
           again: ItemState.t(),

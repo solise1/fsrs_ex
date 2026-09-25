@@ -1,16 +1,16 @@
-defmodule Fsrs.Optimize do
+defmodule FsrsEx.Optimize do
   @moduledoc """
   Computes FSRS-6 parameters from a list of a list of reviews.
 
   Do note that FSRS models provide sensible default parameters that work well,
   this module simply allows you to optimize parameters for a specific person.
 
-  The optimized parameters can be persisted and used later with Fsrs.Schedule.
+  The optimized parameters can be persisted and used later with FsrsEx.Schedule.
   """
 
-  alias Fsrs.Native.TimestampedReview
-  alias Fsrs.Native.Review
-  alias Fsrs.Native
+  alias FsrsEx.Native.TimestampedReview
+  alias FsrsEx.Native.Review
+  alias FsrsEx.Native
 
   @doc """
   Receives a list of a list of reviews with delta_t.

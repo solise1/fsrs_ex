@@ -1,8 +1,8 @@
 # Adapted from https://github.com/open-spaced-repetition/fsrs-rs/blob/v6.6.2/examples/migrate.rs
 
 defmodule MigrateTest do
-  alias Fsrs.Native.MemoryState
-  alias Fsrs.Native.{TimestampedReview, Review}
+  alias FsrsEx.Native.MemoryState
+  alias FsrsEx.Native.{TimestampedReview, Review}
   use ExUnit.Case
 
   test "migrates with full review history (intervals)" do
@@ -25,7 +25,7 @@ defmodule MigrateTest do
       }
     ]
 
-    memory_state = Fsrs.Migrate.migrate_with_full_history(reviews)
+    memory_state = FsrsEx.Migrate.migrate_with_full_history(reviews)
     expected = %MemoryState{stability: 58.60692596435547, difficulty: 1.0}
 
     assert(memory_state == expected)
@@ -51,7 +51,7 @@ defmodule MigrateTest do
       }
     ]
 
-    memory_state = Fsrs.Migrate.migrate_with_full_history_timestamped(reviews)
+    memory_state = FsrsEx.Migrate.migrate_with_full_history_timestamped(reviews)
     expected = %MemoryState{stability: 58.60692596435547, difficulty: 1.0}
 
     assert(memory_state == expected)
@@ -77,7 +77,7 @@ defmodule MigrateTest do
     ]
 
     memory_state =
-      Fsrs.Migrate.migrate_with_partial_history(
+      FsrsEx.Migrate.migrate_with_partial_history(
         reviews,
         ease_factor,
         interval
@@ -95,7 +95,7 @@ defmodule MigrateTest do
     ease_factor = 2.5
     interval = 10.0
 
-    memory_state = Fsrs.Migrate.migrate_with_latest_state(ease_factor, interval)
+    memory_state = FsrsEx.Migrate.migrate_with_latest_state(ease_factor, interval)
 
     expected = %MemoryState{
       stability: 10.0,

@@ -1,4 +1,4 @@
-defmodule Fsrs.Native.TimestampedReview do
+defmodule FsrsEx.Native.TimestampedReview do
   @type t() :: %__MODULE__{
           rating: integer(),
           timestamp: integer()

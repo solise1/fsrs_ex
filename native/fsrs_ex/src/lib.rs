@@ -11,4 +11,4 @@ fn load(_: Env, _: Term) -> bool {
     true
 }
 
-rustler::init!("Elixir.Fsrs.Native", load = load);
+rustler::init!("Elixir.FsrsEx.Native", load = load);

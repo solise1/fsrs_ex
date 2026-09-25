@@ -1,11 +1,11 @@
 # Adapted from https://github.com/open-spaced-repetition/fsrs-rs/blob/v6.6.2/examples/schedule.rs
 
 defmodule ScheduleTest do
-  alias Fsrs.Native.MemoryState
+  alias FsrsEx.Native.MemoryState
   use ExUnit.Case
 
   test "schedule a new card" do
-    next_states = Fsrs.Schedule.schedule_new_card()
+    next_states = FsrsEx.Schedule.schedule_new_card()
 
     assert(round_and_at_least_one(next_states.again.interval) == 1)
     assert(round_and_at_least_one(next_states.hard.interval) == 1)
@@ -21,7 +21,7 @@ defmodule ScheduleTest do
 
     interval = 7
 
-    next_states = Fsrs.Schedule.schedule_existing_card(memory_state, interval)
+    next_states = FsrsEx.Schedule.schedule_existing_card(memory_state, interval)
 
     assert(round_and_at_least_one(next_states.again.interval) == 1)
     assert(round_and_at_least_one(next_states.hard.interval) == 17)
@@ -37,7 +37,8 @@ defmodule ScheduleTest do
 
     last_review = DateTime.utc_now() |> DateTime.add(-7, :day) |> DateTime.to_unix()
 
-    next_states = Fsrs.Schedule.schedule_existing_card_from_timestamps(memory_state, last_review)
+    next_states =
+      FsrsEx.Schedule.schedule_existing_card_from_timestamps(memory_state, last_review)
 
     assert(round_and_at_least_one(next_states.again.interval) == 1)
     assert(round_and_at_least_one(next_states.hard.interval) == 17)

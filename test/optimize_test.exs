@@ -1,13 +1,13 @@
 # Adapted from https://github.com/open-spaced-repetition/fsrs-rs/blob/v6.6.2/examples/optimize.rs
 
 defmodule OptimizeTest do
-  alias Fsrs.Native.TimestampedReview
-  alias Fsrs.Native.Review
+  alias FsrsEx.Native.TimestampedReview
+  alias FsrsEx.Native.Review
   use ExUnit.Case
 
   test "it optimizes parameters for a simulated review history (with intervals)" do
     reviews = create_reviews_for_cards()
-    parameters = Fsrs.Optimize.optimize_parameters(reviews)
+    parameters = FsrsEx.Optimize.optimize_parameters(reviews)
 
     expected_parameters = [
       0.08642714470624924,
@@ -38,7 +38,7 @@ defmodule OptimizeTest do
 
   test "it optimizes parameters for a simulated review history (timestamped)" do
     reviews = create_timestamped_reviews_for_cards()
-    parameters = Fsrs.Optimize.optimize_parameters_timestamped(reviews)
+    parameters = FsrsEx.Optimize.optimize_parameters_timestamped(reviews)
 
     expected_parameters = [
       0.08642714470624924,

@@ -1,11 +1,11 @@
-defmodule Fsrs.Native do
+defmodule FsrsEx.Native do
   @moduledoc """
   Rustler module that contains calls to NIFs.
 
   It's not meant to be used directly, as the parameters may change even in minor releases.
 
-  If you're using this application as a dependency, use Fsrs.Optimize, Fsrs.Schedule and
-  Fsrs.Migrate instead of this module, as those APIs are guaranteed not to break in a
+  If you're using this application as a dependency, use FsrsEx.Optimize, FsrsEx.Schedule and
+  FsrsEx.Migrate instead of this module, as those APIs are guaranteed not to break in a
   minor release.
   """
   version = Mix.Project.config()[:version]

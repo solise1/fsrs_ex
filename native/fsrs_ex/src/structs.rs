@@ -5,14 +5,14 @@ use fsrs::{
 use rustler::NifStruct;
 
 #[derive(NifStruct)]
-#[module = "Fsrs.Native.TimestampedReview"]
+#[module = "FsrsEx.Native.TimestampedReview"]
 pub struct TimestampedReview {
     pub rating: u32,
     pub timestamp: u32,
 }
 
 #[derive(NifStruct)]
-#[module = "Fsrs.Native.Review"]
+#[module = "FsrsEx.Native.Review"]
 pub struct Review {
     pub rating: u32,
     pub delta_t: u32,
@@ -37,7 +37,7 @@ impl From<Review> for FSRSReview {
 }
 
 #[derive(NifStruct)]
-#[module = "Fsrs.Native.MemoryState"]
+#[module = "FsrsEx.Native.MemoryState"]
 pub struct MemoryState {
     pub stability: f32,
     pub difficulty: f32,
@@ -62,7 +62,7 @@ impl From<MemoryState> for FSRSMemoryState {
 }
 
 #[derive(NifStruct)]
-#[module = "Fsrs.Native.ItemState"]
+#[module = "FsrsEx.Native.ItemState"]
 pub struct ItemState {
     pub memory_state: MemoryState,
     pub interval: f32,
@@ -87,7 +87,7 @@ impl From<ItemState> for FSRSItemState {
 }
 
 #[derive(NifStruct)]
-#[module = "Fsrs.Native.NextStates"]
+#[module = "FsrsEx.Native.NextStates"]
 pub struct NextStates {
     pub again: ItemState,
     pub hard: ItemState,

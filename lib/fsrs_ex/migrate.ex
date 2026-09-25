@@ -1,13 +1,13 @@
-defmodule Fsrs.Migrate do
+defmodule FsrsEx.Migrate do
   @moduledoc """
   Migrates from SM-2 (Anki's algorithm) to FSRS-6.
 
   If you started out with an FSRS model you can ignore this module.
   """
-  alias Fsrs.Native.Review
-  alias Fsrs.Native.TimestampedReview
-  alias Fsrs.Native.MemoryState
-  alias Fsrs.Native
+  alias FsrsEx.Native.Review
+  alias FsrsEx.Native.TimestampedReview
+  alias FsrsEx.Native.MemoryState
+  alias FsrsEx.Native
 
   @spec migrate_with_full_history([Review.t()]) :: MemoryState.t() | {:error, atom()}
   def migrate_with_full_history(reviews) do
