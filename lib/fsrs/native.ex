@@ -8,7 +8,15 @@ defmodule Fsrs.Native do
   Fsrs.Migrate instead of this module, as those APIs are guaranteed not to break in a
   minor release.
   """
-  use Rustler, otp_app: :fsrs_ex, crate: :fsrs_ex
+  version = Mix.Project.config()[:version]
+
+  use RustlerPrecompiled,
+    otp_app: :fsrs_ex,
+    crate: :fsrs_ex,
+    base_url: "https://github.com/solise1/fsrs_ex/releases/download/v#{version}",
+    nif_versions: ["2.15"],
+    force_build: System.get_env("FSRS_EX_BUILD") in ["1", "true"],
+    version: version
 
   # ----- Schedule -----
   def next_states(_parameters, _desired_retention, _memory_state, _interval), do: error()

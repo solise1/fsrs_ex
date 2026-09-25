@@ -7,7 +7,8 @@ defmodule FsrsRsEx.MixProject do
       version: "0.1.0",
       elixir: "~> 1.20",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -21,7 +22,21 @@ defmodule FsrsRsEx.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.38.0", runtime: false}
+      {:rustler_precompiled, "~> 0.9.0"},
+      {:rustler, "~> 0.38.0", optional: true}
+    ]
+  end
+
+  defp package do
+    [
+      files: [
+        "lib",
+        "native",
+        "checksum-*.exs",
+        "mix.exs"
+      ],
+      licenses: ["BSD-3-Clause"],
+      links: %{"GitHub" => "https://github.com/solise1/fsrs_ex"}
     ]
   end
 end
