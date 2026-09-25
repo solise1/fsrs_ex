@@ -1,14 +1,17 @@
 defmodule FsrsRsEx.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :fsrs_ex,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.20",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      package: package()
+      package: package(),
+      source_url: "https://github.com/solise1/fsrs_ex"
     ]
   end
 
