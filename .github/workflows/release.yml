@@ -52,8 +52,6 @@ jobs:
 
     - name: Build the project
       id: build-crate
-      env:
-        DRY_RUN: "true"
       uses: philss/rustler-precompiled-action@v1.1.5
       with:
         project-name: fsrs_ex
