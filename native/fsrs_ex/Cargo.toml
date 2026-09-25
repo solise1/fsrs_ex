@@ -2,6 +2,7 @@
 name = "fsrs_ex"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.85"
 
 [dependencies]
 fsrs = "6.6.2"
@@ -13,6 +14,11 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [target.x86_64-unknown-linux-musl]
+rustflags = [
+  "-C", "target-feature=-crt-static"
+]
+
+[target.aarch64-unknown-linux-musl]
 rustflags = [
   "-C", "target-feature=-crt-static"
 ]
