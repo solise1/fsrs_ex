@@ -54,12 +54,12 @@ jobs:
       id: build-crate
       uses: philss/rustler-precompiled-action@v1.1.5
       with:
-        project-name: example
+        project-name: fsrs_ex
         project-version: ${{ env.PROJECT_VERSION }}
         target: ${{ matrix.job.target }}
         nif-version: ${{ matrix.nif }}
         use-cross: ${{ matrix.job.use-cross }}
-        project-dir: "native/example"
+        project-dir: "native/fsrs_ex"
 
     - uses: actions/attest@v4
       with:
