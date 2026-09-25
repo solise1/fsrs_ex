@@ -47,11 +47,13 @@ jobs:
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
       with:
-        toolchain: 1.86.0
+        toolchain: stable
         target: ${{ matrix.job.target }}
 
     - name: Build the project
       id: build-crate
+      env:
+        DRY_RUN: "true"
       uses: philss/rustler-precompiled-action@v1.1.5
       with:
         project-name: fsrs_ex
